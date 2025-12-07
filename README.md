@@ -25,3 +25,29 @@ The following features will be used in the dataset:
 |--------|------------|
 | 0      | Non-Return |
 | 1      | Return     |
+
+
+
+## Models to be Implemented
+
+1. Logistic Regression  
+2. Support Vector Machine (SVM)  
+3. Random Forest  
+4. XGBoost  
+5. Artificial Neural Network (ANN) *(if possible)*  
+
+---
+
+## Possible Metrics
+
+1. Accuracy  
+2. Precision  
+3. Recall  
+4. F1-Score  
+5. ROC-AUC  
+
+---
+
+## Workflow
+
+![Workflow](workflow.png)
