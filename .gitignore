@@ -1,0 +1,69 @@
+# ===============================
+# ✅ PYTHON
+# ===============================
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.env/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.mypy_cache/
+
+# ===============================
+# ✅ ML MODELS / GENERATED FILES
+# ===============================
+
+*.pkl
+*.joblib
+*.h5
+*.onnx
+
+# ===============================
+# ✅ DATASETS (VERY IMPORTANT)
+# ===============================
+
+*.csv
+*.xlsx
+*.json
+
+# ===============================
+# ✅ FASTAPI / BACKEND
+# ===============================
+
+uvicorn.log
+
+# ===============================
+# ✅ NEXT.JS / NODE
+# ===============================
+
+node_modules/
+.next/
+out/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+package-lock.json
+.next/static/
+.next/cache/
+
+# ===============================
+# ✅ OS FILES
+# ===============================
+
+.DS_Store
+Thumbs.db
+
+# ===============================
+# ✅ EDITOR FILES
+# ===============================
+
+.vscode/
+.idea/
