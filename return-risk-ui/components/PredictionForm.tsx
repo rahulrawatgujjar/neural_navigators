@@ -27,6 +27,7 @@ export default function PredictionForm() {
   });
 
   const [result, setResult] = useState<number | null>(null);
+  const [probability, setProbability] = useState<number | null>(null); // ✅ NEW
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
@@ -39,6 +40,7 @@ export default function PredictionForm() {
     e.preventDefault();
     setLoading(true);
     setResult(null);
+    setProbability(null); // ✅ RESET PROBABILITY
 
     const res = await fetch("http://127.0.0.1:8000/predict", {
       method: "POST",
@@ -47,7 +49,9 @@ export default function PredictionForm() {
     });
 
     const data = await res.json();
+
     setResult(data.prediction);
+    setProbability(data.probability); // ✅ STORE PROBABILITY
     setLoading(false);
   };
 
@@ -144,8 +148,8 @@ export default function PredictionForm() {
           </div>
         </form>
 
-        {/* Result Display */}
-        {result !== null && (
+        {/* ✅ RESULT + ✅ PROBABILITY DISPLAY */}
+        {result !== null && probability !== null && (
           <div
             className={`mt-8 text-center text-lg font-semibold px-6 py-4 rounded-xl ${
               result === 1
@@ -153,9 +157,23 @@ export default function PredictionForm() {
                 : "bg-green-100 text-green-700 border border-green-300"
             }`}
           >
-            {result === 1
-              ? "⚠️ High Risk: Product Likely to be Returned"
-              : "✅ Low Risk: Product Likely to be Kept"}
+            <p>
+              {result === 1
+                ? "⚠️ High Risk: Product Likely to be Returned"
+                : "✅ Low Risk: Product Likely to be Kept"}
+            </p>
+                
+            <p className="mt-2 text-base font-medium">
+              Return Probability: <b>{(probability * 100).toFixed(2)}%</b>
+            </p>
+
+            {/* ✅ Simple Probability Bar */}
+            <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+              <div
+                className="bg-indigo-600 h-2 rounded-full"
+                style={{ width: `${probability * 100}%` }}
+              ></div>
+            </div>
           </div>
         )}
       </div>
