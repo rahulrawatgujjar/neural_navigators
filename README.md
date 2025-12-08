@@ -58,7 +58,7 @@ The following models were implemented and evaluated using **GridSearchCV with 5-
 3. Random Forest  
 4. XGBoost  
 
-After evaluation, the **best-performing model** was selected and saved as:
+After evaluation, the **best-performing model** (Random Forest) was selected and saved as:
 
 - `best_model.pkl`
 - `scaler.pkl`
