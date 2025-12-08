@@ -122,3 +122,13 @@ The system follows a **full-stack machine learning pipeline**:
 ![Workflow](workflow.png)
 
 ---
+
+## Application Screenshots (Localhost)
+
+### Home Page
+![Localhost UI - Prediction Page](screenshots/prediction_page.png)
+
+### About Page
+![Localhost UI - About Page](screenshots/about_page.png)
+
+---
